@@ -1,0 +1,341 @@
+:root {
+	--ugp-id-text-color: #0b4eb3;
+	--ugp-id-font-stack: "Arial", "Helvetica Neue", Helvetica, sans-serif;
+	--ugp-id-card-width-mm: 54mm;
+	--ugp-id-card-height-mm: 85.6mm;
+	--ugp-id-preview-width: 300px;
+}
+
+.ugp-id-status-panel,
+.ugp-id-preview-header {
+	background:#fff;
+	border:1px solid #dcdcde;
+	border-radius:12px;
+	padding:14px 16px;
+	margin:12px 0 18px;
+}
+.ugp-id-preview-header {
+	display:flex;
+	gap:12px;
+	align-items:center;
+	justify-content:space-between;
+	flex-wrap:wrap;
+}
+.ugp-id-search-form {
+	display:flex;
+	gap:8px;
+	align-items:center;
+	flex-wrap:wrap;
+	margin:0 0 12px;
+}
+.ugp-id-card-toolbar {
+	display:flex;
+	gap:10px;
+	align-items:center;
+	flex-wrap:wrap;
+	margin:16px 0;
+}
+.ugp-id-card-set {
+	display:flex;
+	gap:24px;
+	align-items:flex-start;
+	flex-wrap:wrap;
+}
+.ugp-id-card {
+	position:relative;
+	width:min(100%, var(--ugp-id-preview-width));
+	aspect-ratio:54 / 85.6;
+	/* portrait CR80 layout: 54mm x 85.6mm */
+	overflow:hidden;
+	background:#fff;
+	box-shadow:0 18px 45px rgba(15,23,42,.20);
+	border-radius:8px;
+	font-family:var(--ugp-id-font-stack);
+	color:var(--ugp-id-text-color);
+}
+.ugp-id-template {
+	position:absolute;
+	inset:0;
+	width:100%;
+	height:100%;
+	object-fit:fill;
+	z-index:1;
+}
+.ugp-id-photo-box {
+	--ugp-id-photo-border-width:2.25px;
+	--ugp-id-photo-placeholder-inset:.5px;
+	--ugp-id-photo-radius:3px;
+	position:absolute;
+	left:21.4%;
+	top:18.8%;
+	width:57.2%;
+	aspect-ratio:1 / 1;
+	z-index:2;
+	display:block;
+	overflow:hidden;
+	background:#fff;
+	border:0;
+	box-shadow:none;
+	border-radius:var(--ugp-id-photo-radius);
+	box-sizing:border-box;
+}
+.ugp-id-photo-box::after {
+	content:'';
+	position:absolute;
+	inset:0;
+	z-index:2;
+	pointer-events:none;
+	border:var(--ugp-id-photo-border-width) solid rgba(255,255,255,.95);
+	border-radius:var(--ugp-id-photo-radius);
+	box-sizing:border-box;
+}
+.ugp-id-photo-box img {
+	position:absolute;
+	inset:var(--ugp-id-photo-placeholder-inset);
+	z-index:1;
+	width:calc(100% - (var(--ugp-id-photo-placeholder-inset) * 2));
+	height:calc(100% - (var(--ugp-id-photo-placeholder-inset) * 2));
+	max-width:none;
+	object-fit:contain;
+	background:#fff;
+	display:block;
+	box-sizing:border-box;
+	border:0;
+	border-radius:calc(var(--ugp-id-photo-radius) - var(--ugp-id-photo-placeholder-inset));
+}
+.ugp-id-front-name,
+.ugp-id-front-role,
+.ugp-id-front-subline,
+.ugp-id-front-rector,
+.ugp-id-back-website,
+.ugp-id-back-id,
+.ugp-id-back-nrc,
+.ugp-id-back-phone,
+.ugp-id-back-email {
+	position:absolute;
+	z-index:3;
+	left:11%;
+	width:78%;
+	text-align:center;
+	font-family:var(--ugp-id-font-stack);
+	font-weight:700;
+	line-height:1.32;
+	letter-spacing:0;
+	color:var(--ugp-id-text-color);
+	box-sizing:border-box;
+	height:auto;
+	min-height:1.45em;
+	max-height:none;
+	overflow:visible;
+	text-overflow:clip;
+	word-break:normal;
+	text-wrap:wrap;
+}
+.ugp-id-front-name {
+	top:calc(57.3% - 10px);
+	font-size:17.68px;
+	min-height:1.6em;
+	white-space:nowrap;
+}
+.ugp-id-front-role {
+	top:calc(67.9% - 30px);
+	font-size:14.58px;
+	font-weight:700;
+}
+.ugp-id-front-subline {
+	top:calc(74.1% - 35px);
+	font-size:14.58px;
+	min-height:2.75em;
+	font-weight:700;
+}
+.ugp-id-front-rector {
+	top:calc(89.8% - 5px);
+	font-size:14.58px;
+	font-weight:700;
+}
+.ugp-id-back-website,
+.ugp-id-back-id,
+.ugp-id-back-nrc,
+.ugp-id-back-phone,
+.ugp-id-back-email {
+	left:10%;
+	width:80%;
+	font-size:14.7px;
+	font-weight:700;
+	white-space:nowrap;
+}
+.ugp-id-back-website {
+	top:calc(22.8% - 33px);
+}
+.ugp-id-back-id {
+	top:calc(61.0% - 10px);
+}
+.ugp-id-back-nrc {
+	top:calc(66.0% - 3px);
+}
+.ugp-id-back-phone {
+	top:calc(71.0% + 4px);
+}
+.ugp-id-back-email {
+	top:calc(76.0% + 11px);
+}
+.ugp-id-dynamic-qr {
+	position:absolute;
+	z-index:4;
+	left:29.1%;
+	top:26.0%;
+	width:41.8%;
+	height:auto;
+	background:#fff;
+	padding:0;
+}
+
+/* Portal/user ID card display: hide the editable HTML card until its exact flattened PNG is ready.
+   html2canvas captures a visible clone, then the browser replaces the live HTML with the PNG. */
+.ugp-id-card-set.ugp-id-flattened-only {
+	position:relative;
+	min-height:calc(min(100vw, var(--ugp-id-preview-width)) * 85.6 / 54);
+}
+.ugp-id-card-set.ugp-id-flattened-only:not(.is-ugp-flattened-ready):not(.is-ugp-flattened-error)::before {
+	content:'Preparing issued ID card preview...';
+	display:block;
+	padding:16px;
+	background:#fff;
+	border:1px solid #dcdcde;
+	border-radius:12px;
+	color:#475569;
+	font-weight:700;
+}
+.ugp-id-card-set.ugp-id-flattened-only:not(.is-ugp-flattened-ready):not(.is-ugp-flattened-error) .ugp-id-card {
+	visibility:hidden;
+}
+.ugp-id-card-set.ugp-id-flattened-only.is-ugp-flattened-ready .ugp-id-card {
+	visibility:visible;
+}
+.ugp-id-card-set.ugp-id-flattened-only.is-ugp-flattened-error .ugp-id-card {
+	visibility:visible;
+}
+
+.ugp-id-flattened-image {
+	display:block;
+	width:100%;
+	height:100%;
+	object-fit:fill;
+}
+.ugp-id-card .button {
+	font-size:13px;
+}
+@media (min-width: 1200px) {
+	.ugp-id-admin-wrap .ugp-id-card {
+		width:320px;
+	}
+}
+@media print {
+	@page {
+		size: 54mm 85.6mm;
+		margin: 0;
+	}
+	body * {
+		visibility:hidden !important;
+	}
+	.ugp-id-card-set,
+	.ugp-id-card-set * {
+		visibility:visible !important;
+	}
+	.ugp-id-card-toolbar,
+	.ugp-id-preview-header,
+	.notice,
+	#adminmenumain,
+	#wpadminbar,
+	.nav-tab-wrapper,
+	.ugp-id-status-panel {
+		display:none !important;
+	}
+	.ugp-id-card-set {
+		position:absolute;
+		left:0;
+		top:0;
+		display:block;
+		width:100%;
+		margin:0;
+		padding:0;
+	}
+	.ugp-id-card {
+		width:var(--ugp-id-card-width-mm);
+		height:var(--ugp-id-card-height-mm);
+		box-shadow:none;
+		border-radius:0;
+		page-break-after:always;
+		break-after:page;
+	}
+}
+
+/* v3.3.7: make card download/print controls match the LMS portal Upload/Edit Photo action. */
+.ugp-id-card-toolbar.slms-id-card-action-row {
+	justify-content:flex-start;
+	align-items:center;
+	gap:10px;
+	margin:10px 0 16px;
+}
+.ugp-id-card-toolbar .slms-portal-button,
+.ugp-id-batch-download.slms-portal-button {
+	display:inline-flex;
+	align-items:center;
+	justify-content:center;
+	padding:0.9rem 1.3rem;
+	border-radius:999px;
+	border:1px solid transparent;
+	background:linear-gradient(180deg, #256fb2 0%, #155a95 100%);
+	color:#fff;
+	font-weight:700;
+	font-size:13px;
+	line-height:1.1;
+	text-decoration:none;
+	box-shadow:0 18px 28px rgba(37,111,178,.20);
+	cursor:pointer;
+	transition:transform .18s ease, box-shadow .18s ease, opacity .18s ease;
+	min-height:auto;
+}
+.ugp-id-card-toolbar .slms-portal-button:hover,
+.ugp-id-card-toolbar .slms-portal-button:focus,
+.ugp-id-batch-download.slms-portal-button:hover,
+.ugp-id-batch-download.slms-portal-button:focus {
+	color:#fff;
+	transform:translateY(-1px);
+	box-shadow:0 22px 34px rgba(37,111,178,.24);
+}
+.ugp-id-card-toolbar .slms-portal-button.is-secondary,
+.ugp-id-batch-download.slms-portal-button.is-secondary {
+	background:rgba(255,255,255,.96);
+	color:#0f2f4f;
+	border-color:rgba(37,111,178,.18);
+	box-shadow:none;
+}
+.ugp-id-card-toolbar .slms-portal-button.is-secondary:hover,
+.ugp-id-card-toolbar .slms-portal-button.is-secondary:focus,
+.ugp-id-batch-download.slms-portal-button.is-secondary:hover,
+.ugp-id-batch-download.slms-portal-button.is-secondary:focus {
+	color:#0f2f4f;
+}
+.slms-id-card-shell .ugp-id-card-toolbar {
+	margin-top:0;
+}
+.ugp-id-batch-stage {
+	position:absolute;
+	left:-20000px;
+	top:0;
+	width:720px;
+	opacity:.01;
+	pointer-events:none;
+	z-index:-1;
+}
+
+/* Keep the issued-card controls directly under the Upload/Edit Photo action in the portal view. */
+.slms-id-card-shell {
+	display:block !important;
+	justify-content:flex-start !important;
+	padding:0 !important;
+}
+.slms-id-card-shell .ugp-id-card-set {
+	justify-content:flex-start;
+}

@@ -1,0 +1,115 @@
+/**
+ * Simple LMS admin mobile override layer.
+ *
+ * Loaded after assets/admin.css and scoped to WordPress admin mobile widths.
+ */
+
+@media screen and (max-width: 782px) {
+	body.slms-admin-chrome #wpcontent,
+	body.slms-admin-chrome #wpbody-content {
+		box-sizing: border-box;
+		overflow-x: hidden;
+	}
+
+	body.slms-admin-chrome .slms-admin-page,
+	body.slms-admin-chrome .slms-page-shell,
+	body.slms-admin-chrome .wrap {
+		width: 100% !important;
+		max-width: 100% !important;
+		min-width: 0 !important;
+	}
+
+	body.slms-admin-chrome .slms-page-header,
+	body.slms-admin-chrome .slms-page-actions,
+	body.slms-admin-chrome .slms-grid-main,
+	body.slms-admin-chrome .slms-record-shell,
+	body.slms-admin-chrome .slms-card-grid,
+	body.slms-admin-chrome .slms-form-grid,
+	body.slms-admin-chrome .slms-two-column-grid,
+	body.slms-admin-chrome .slms-dashboard-grid {
+		display: grid !important;
+		grid-template-columns: 1fr !important;
+		align-items: stretch !important;
+		gap: 0.8rem !important;
+		width: 100% !important;
+		max-width: 100% !important;
+		min-width: 0 !important;
+	}
+
+	body.slms-admin-chrome .slms-page-header,
+	body.slms-admin-chrome .slms-card,
+	body.slms-admin-chrome .slms-panel,
+	body.slms-admin-chrome .slms-record-card {
+		padding: 1rem !important;
+		border-radius: 18px !important;
+	}
+
+	body.slms-admin-chrome .slms-page-actions .button,
+	body.slms-admin-chrome .slms-page-actions .button-primary,
+	body.slms-admin-chrome .slms-page-actions .button-secondary,
+	body.slms-admin-chrome .button.slms-button,
+	body.slms-admin-chrome input[type="submit"],
+	body.slms-admin-chrome button {
+		width: 100%;
+		min-height: 44px;
+		justify-content: center;
+		text-align: center;
+		touch-action: manipulation;
+	}
+
+	body.slms-admin-chrome input,
+	body.slms-admin-chrome select,
+	body.slms-admin-chrome textarea {
+		max-width: 100% !important;
+		min-height: 44px;
+		font-size: 16px !important;
+	}
+
+	body.slms-admin-chrome textarea {
+		min-height: 110px;
+	}
+
+	body.slms-admin-chrome .form-table,
+	body.slms-admin-chrome .form-table tbody,
+	body.slms-admin-chrome .form-table tr,
+	body.slms-admin-chrome .form-table th,
+	body.slms-admin-chrome .form-table td {
+		display: block;
+		width: 100% !important;
+		box-sizing: border-box;
+	}
+
+	body.slms-admin-chrome .form-table th {
+		padding-bottom: 0.25rem !important;
+	}
+
+	body.slms-admin-chrome .form-table td {
+		padding-top: 0.25rem !important;
+	}
+
+	body.slms-admin-chrome .slms-table-wrap,
+	body.slms-admin-chrome .widefat {
+		width: 100% !important;
+		max-width: 100% !important;
+	}
+
+	body.slms-admin-chrome .slms-table-wrap {
+		overflow-x: auto !important;
+		-webkit-overflow-scrolling: touch;
+		padding-bottom: 0.35rem;
+	}
+
+	body.slms-admin-chrome .widefat {
+		min-width: 680px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	body.slms-admin-chrome .slms-page-header,
+	body.slms-admin-chrome .slms-card,
+	body.slms-admin-chrome .slms-panel,
+	body.slms-admin-chrome .slms-record-card {
+		padding: 0.85rem !important;
+		border-radius: 16px !important;
+	}
+}

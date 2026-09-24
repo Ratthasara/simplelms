@@ -1,0 +1,895 @@
+/**
+ * Simple LMS mobile override layer.
+ *
+ * Loaded after assets/portal.css. All rules are scoped to screen/mobile widths so
+ * established desktop, laptop, and large-tablet layouts remain unchanged.
+ */
+
+@media screen and (max-width: 1120px) {
+	body.slms-portal-page .slms-app-shell,
+	body.slms-portal-page .slms-portal-grid,
+	body.slms-portal-page .slms-workspace-card-grid,
+	body.slms-portal-page .slms-leave-panel-grid {
+		grid-template-columns: 1fr !important;
+	}
+
+	body.slms-portal-page .slms-portal-sidebar,
+	body.slms-portal-page .slms-app-sidebar {
+		position: relative !important;
+		top: auto !important;
+		width: 100% !important;
+		max-width: 100% !important;
+	}
+}
+
+@media screen and (max-width: 760px) {
+	html,
+	body.slms-portal-page {
+		overflow-x: hidden;
+	}
+
+	body.slms-portal-page,
+	body.slms-portal-page * {
+		box-sizing: border-box;
+	}
+
+	body.slms-portal-page img,
+	body.slms-portal-page video,
+	body.slms-portal-page canvas,
+	body.slms-portal-page svg {
+		max-width: 100%;
+		height: auto;
+	}
+
+	body.slms-portal-page .slms-portal-page-free,
+	body.slms-portal-page .slms-page-flow-shell,
+	body.slms-portal-page .slms-page-flow-main,
+	body.slms-portal-page .slms-portal-app,
+	body.slms-portal-page .slms-editor-tools {
+		width: 100% !important;
+		max-width: 100% !important;
+		min-width: 0 !important;
+		margin-left: auto !important;
+		margin-right: auto !important;
+		padding-left: max(0.75rem, env(safe-area-inset-left)) !important;
+		padding-right: max(0.75rem, env(safe-area-inset-right)) !important;
+	}
+
+	body.slms-portal-page .slms-page-flow-main,
+	body.slms-portal-page .slms-portal-app,
+	body.slms-portal-page .slms-editor-tools {
+		padding-top: 0.75rem !important;
+		padding-bottom: 1.25rem !important;
+	}
+
+	body.slms-portal-page .slms-app-shell,
+	body.slms-portal-page .slms-portal-grid,
+	body.slms-portal-page .slms-form-split,
+	body.slms-portal-page .slms-portal-stat-grid,
+	body.slms-portal-page .slms-workspace-card-grid,
+	body.slms-portal-page .slms-leave-panel-grid,
+	body.slms-portal-page .slms-transcript-student-grid,
+	body.slms-portal-page .slms-record-grid,
+	body.slms-portal-page .slms-assessment-grid,
+	body.slms-portal-page .slms-academic-section-grid,
+	body.slms-portal-page .slms-directory-grid,
+	body.slms-portal-page .slms-profile-grid {
+		display: grid !important;
+		grid-template-columns: 1fr !important;
+		gap: 0.85rem !important;
+		min-width: 0 !important;
+	}
+
+	body.slms-portal-page .slms-portal-banner,
+	body.slms-portal-page .slms-subject-hero,
+	body.slms-portal-page .slms-portal-panel,
+	body.slms-portal-page .slms-workspace-panel,
+	body.slms-portal-page .slms-flow-section,
+	body.slms-portal-page .slms-card,
+	body.slms-portal-page .slms-empty-state,
+	body.slms-portal-page .slms-editor-tools-login-guard,
+	body.slms-portal-page .slms-transcript-document-header,
+	body.slms-portal-page .slms-transcript-student-card,
+	body.slms-portal-page .slms-transcript-term-block,
+	body.slms-portal-page .slms-transcript-summary {
+		width: 100% !important;
+		max-width: 100% !important;
+		min-width: 0 !important;
+		padding: 1rem !important;
+		border-radius: 20px !important;
+	}
+
+	body.slms-portal-page .slms-portal-title,
+	body.slms-portal-page .slms-subject-title,
+	body.slms-portal-page .slms-page-title {
+		font-size: clamp(1.75rem, 8vw, 2.55rem) !important;
+		line-height: 1.08 !important;
+		word-break: break-word;
+	}
+
+	body.slms-portal-page h1,
+	body.slms-portal-page h2,
+	body.slms-portal-page h3,
+	body.slms-portal-page p {
+		overflow-wrap: anywhere;
+	}
+
+	body.slms-portal-page .slms-section-heading,
+	body.slms-portal-page .slms-subject-week-group-summary .slms-section-heading,
+	body.slms-portal-page .slms-transcript-document-header,
+	body.slms-portal-page .slms-transcript-term-header,
+	body.slms-portal-page .slms-pagination-bar,
+	body.slms-portal-page .slms-header-action-row {
+		display: grid !important;
+		grid-template-columns: 1fr !important;
+		align-items: stretch !important;
+		gap: 0.75rem !important;
+	}
+
+	body.slms-portal-page .slms-header-action-row .slms-portal-actions--hero,
+	body.slms-portal-page .slms-header-action-row .slms-subject-hero-tabs,
+	body.slms-portal-page .slms-portal-actions,
+	body.slms-portal-page .slms-tab-strip,
+	body.slms-portal-page .slms-row-actions,
+	body.slms-portal-page .slms-inline-actions,
+	body.slms-portal-page .slms-record-actions,
+	body.slms-portal-page .slms-id-card-action-row,
+	body.slms-portal-page .slms-attendance-modal-actions,
+	body.slms-portal-page .slms-photo-modal-controls {
+		display: grid !important;
+		grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+		align-items: stretch !important;
+		gap: 0.55rem !important;
+		width: 100% !important;
+		max-width: 100% !important;
+		overflow: visible !important;
+	}
+
+	body.slms-portal-page .slms-portal-button,
+	body.slms-portal-page .slms-nav-button,
+	body.slms-portal-page .slms-tab-link,
+	body.slms-portal-page button,
+	body.slms-portal-page input[type="button"],
+	body.slms-portal-page input[type="submit"] {
+		min-height: 44px;
+		max-width: 100%;
+		touch-action: manipulation;
+	}
+
+	body.slms-portal-page .slms-portal-actions .slms-portal-button,
+	body.slms-portal-page .slms-header-action-row .slms-nav-button,
+	body.slms-portal-page .slms-header-action-row .slms-tab-link,
+	body.slms-portal-page .slms-tab-strip .slms-tab-link,
+	body.slms-portal-page .slms-row-actions .slms-portal-button,
+	body.slms-portal-page .slms-inline-actions .slms-portal-button,
+	body.slms-portal-page .slms-record-actions .slms-portal-button,
+	body.slms-portal-page .slms-id-card-action-row .slms-portal-button,
+	body.slms-portal-page .slms-attendance-modal-actions .slms-portal-button,
+	body.slms-portal-page .slms-photo-modal-controls .slms-portal-button {
+		width: 100% !important;
+		justify-content: center !important;
+		white-space: normal !important;
+		text-align: center !important;
+		padding: 0.72rem 0.8rem !important;
+	}
+
+	body.slms-portal-page input,
+	body.slms-portal-page select,
+	body.slms-portal-page textarea {
+		width: 100% !important;
+		max-width: 100% !important;
+		min-height: 44px;
+		font-size: 16px !important;
+	}
+
+	body.slms-portal-page textarea {
+		min-height: 110px;
+	}
+
+	body.slms-portal-page label,
+	body.slms-portal-page .slms-field,
+	body.slms-portal-page .slms-form-stack > * {
+		min-width: 0 !important;
+		max-width: 100% !important;
+	}
+
+	body.slms-portal-page .slms-table-wrap,
+	body.slms-portal-page .slms-card-issuer-table-scroll,
+	body.slms-portal-page .slms-portal-table-wrap {
+		width: 100% !important;
+		max-width: 100% !important;
+		overflow-x: auto !important;
+		-webkit-overflow-scrolling: touch;
+		padding-bottom: 0.25rem;
+	}
+
+	body.slms-portal-page .slms-portal-table,
+	body.slms-portal-page table {
+		max-width: 100%;
+	}
+
+	body.slms-portal-page .slms-id-card-shell {
+		justify-content: flex-start !important;
+		overflow-x: auto !important;
+		-webkit-overflow-scrolling: touch;
+		padding: 0 0 0.75rem !important;
+		scrollbar-width: thin;
+	}
+
+	body.slms-portal-page .slms-id-card-shell::after {
+		content: "";
+		flex: 0 0 0.75rem;
+	}
+
+	body.slms-portal-page .slms-id-card {
+		max-width: none !important;
+	}
+
+	body.slms-portal-page .slms-photo-modal-card,
+	body.slms-portal-page .slms-attendance-modal-card,
+	body.slms-portal-page .slms-header-image-modal .slms-photo-modal-card,
+	body.slms-portal-page .slms-header-image-modal-card {
+		width: calc(100vw - 1.5rem) !important;
+		max-width: calc(100vw - 1.5rem) !important;
+		max-height: calc(100vh - 1.5rem) !important;
+		max-height: calc(100dvh - 1.5rem) !important;
+		overflow: auto !important;
+		padding: 1rem !important;
+		border-radius: 20px !important;
+	}
+
+	body.slms-portal-page .slms-photo-modal-body,
+	body.slms-portal-page .slms-attendance-modal-body {
+		max-width: 100% !important;
+		overflow-x: hidden !important;
+	}
+
+	body.slms-portal-page .slms-card-issuer-pages,
+	body.slms-portal-page .page-numbers {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.45rem;
+		align-items: center;
+	}
+
+	body.slms-portal-page .page-numbers {
+		min-width: 40px;
+		min-height: 40px;
+		justify-content: center;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	body.slms-portal-page .slms-card-issuer-table,
+	body.slms-portal-page .slms-card-issuer-table thead,
+	body.slms-portal-page .slms-card-issuer-table tbody,
+	body.slms-portal-page .slms-card-issuer-table tr,
+	body.slms-portal-page .slms-card-issuer-table th,
+	body.slms-portal-page .slms-card-issuer-table td,
+	body.slms-portal-page .slms-transcript-table,
+	body.slms-portal-page .slms-transcript-table thead,
+	body.slms-portal-page .slms-transcript-table tbody,
+	body.slms-portal-page .slms-transcript-table tr,
+	body.slms-portal-page .slms-transcript-table th,
+	body.slms-portal-page .slms-transcript-table td {
+		display: block;
+		width: 100%;
+	}
+
+	body.slms-portal-page .slms-card-issuer-table thead,
+	body.slms-portal-page .slms-transcript-table thead {
+		display: none !important;
+	}
+
+	body.slms-portal-page .slms-card-issuer-table tr,
+	body.slms-portal-page .slms-transcript-table tr {
+		margin-bottom: 0.85rem;
+		padding: 0.85rem;
+		border: 1px solid var(--slms-border, #d4e4f5);
+		border-radius: 18px;
+		background: #fff;
+		box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+	}
+
+	body.slms-portal-page .slms-card-issuer-table td,
+	body.slms-portal-page .slms-transcript-table td {
+		padding: 0.45rem 0 !important;
+		border-bottom: 0 !important;
+		white-space: normal !important;
+		overflow-wrap: anywhere;
+	}
+
+	body.slms-portal-page .slms-card-issuer-table td::before,
+	body.slms-portal-page .slms-transcript-table td::before {
+		content: attr(data-label);
+		display: block;
+		margin-bottom: 0.15rem;
+		font-size: 0.72rem;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--slms-text-muted, #475569);
+	}
+
+	body.slms-portal-page .slms-transcript-table td {
+		display: grid;
+		grid-template-columns: minmax(90px, 34%) minmax(0, 1fr);
+		gap: 0.5rem;
+		align-items: start;
+	}
+
+	body.slms-portal-page .slms-transcript-table td::before {
+		margin-bottom: 0;
+	}
+
+	body.slms-portal-page .slms-card-issuer-table td:first-child {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+	}
+
+	body.slms-portal-page .slms-card-issuer-table td:first-child::before {
+		margin-bottom: 0;
+	}
+
+	body.slms-portal-page .slms-card-issuer-table td:last-child {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 0.5rem;
+	}
+
+	body.slms-portal-page .slms-card-issuer-table td:last-child .slms-portal-button {
+		width: 100%;
+		margin: 0 !important;
+	}
+
+	body.slms-portal-page .slms-card-issuer-table td[colspan],
+	body.slms-portal-page .slms-transcript-table td[colspan] {
+		display: block;
+		padding: 0.75rem !important;
+	}
+
+	body.slms-portal-page .slms-card-issuer-table td[colspan]::before,
+	body.slms-portal-page .slms-transcript-table td[colspan]::before {
+		content: none;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	body.slms-portal-page .slms-portal-banner,
+	body.slms-portal-page .slms-subject-hero {
+		padding: 0.95rem !important;
+		border-radius: 18px !important;
+	}
+
+	body.slms-portal-page .slms-portal-actions,
+	body.slms-portal-page .slms-header-action-row .slms-portal-actions--hero,
+	body.slms-portal-page .slms-header-action-row .slms-subject-hero-tabs,
+	body.slms-portal-page .slms-tab-strip,
+	body.slms-portal-page .slms-row-actions,
+	body.slms-portal-page .slms-inline-actions,
+	body.slms-portal-page .slms-record-actions,
+	body.slms-portal-page .slms-id-card-action-row,
+	body.slms-portal-page .slms-attendance-modal-actions,
+	body.slms-portal-page .slms-photo-modal-controls {
+		grid-template-columns: 1fr !important;
+	}
+
+	body.slms-portal-page .slms-transcript-document-meta,
+	body.slms-portal-page .slms-portal-feature-list,
+	body.slms-portal-page .slms-id-detail-row {
+		display: grid !important;
+		grid-template-columns: 1fr !important;
+		gap: 0.35rem !important;
+	}
+
+	body.slms-portal-page .slms-transcript-document-header,
+	body.slms-portal-page .slms-transcript-student-card,
+	body.slms-portal-page .slms-transcript-term-block,
+	body.slms-portal-page .slms-transcript-summary {
+		padding: 0.85rem !important;
+	}
+}
+
+@media screen and (max-width: 380px) {
+	body.slms-portal-page .slms-portal-page-free,
+	body.slms-portal-page .slms-page-flow-shell,
+	body.slms-portal-page .slms-page-flow-main,
+	body.slms-portal-page .slms-portal-app,
+	body.slms-portal-page .slms-editor-tools {
+		padding-left: max(0.55rem, env(safe-area-inset-left)) !important;
+		padding-right: max(0.55rem, env(safe-area-inset-right)) !important;
+	}
+
+	body.slms-portal-page .slms-portal-panel,
+	body.slms-portal-page .slms-workspace-panel,
+	body.slms-portal-page .slms-flow-section,
+	body.slms-portal-page .slms-card,
+	body.slms-portal-page .slms-empty-state {
+		padding: 0.85rem !important;
+		border-radius: 16px !important;
+	}
+
+	body.slms-portal-page .slms-transcript-table td {
+		grid-template-columns: 1fr;
+		gap: 0.2rem;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	body.slms-portal-page .slms-submission-panel-heading,
+	body.slms-portal-page .slms-assignment-review-toolbar,
+	body.slms-portal-page .slms-submission-download-actions {
+		display: grid !important;
+		grid-template-columns: 1fr !important;
+		align-items: stretch !important;
+		gap: 0.6rem !important;
+	}
+
+	body.slms-portal-page .slms-assignment-download-form,
+	body.slms-portal-page .slms-assignment-download-button,
+	body.slms-portal-page .slms-assignment-submit-button,
+	body.slms-portal-page .slms-assignment-grade-button {
+		width: 100% !important;
+	}
+
+	body.slms-portal-page .slms-submission-editor:not([open]) {
+		display: block !important;
+		width: 100% !important;
+	}
+
+	body.slms-portal-page .slms-submission-editor:not([open]) > summary,
+	body.slms-portal-page .slms-submission-editor-toggle {
+		width: 100% !important;
+	}
+
+	body.slms-portal-page .slms-submission-inline-summary,
+	body.slms-portal-page .slms-submission-review-summary {
+		align-items: stretch !important;
+	}
+
+	body.slms-portal-page .slms-submission-text-response {
+		padding: 0.85rem !important;
+		border-radius: 16px !important;
+	}
+}
+
+@media screen and (max-width: 520px) {
+	body.slms-portal-page .slms-subject-item-card-actions {
+		display: grid !important;
+		grid-template-columns: 1fr !important;
+		align-items: stretch !important;
+		justify-content: stretch !important;
+		gap: 0.45rem !important;
+		width: 100% !important;
+	}
+
+	body.slms-portal-page .slms-subject-item-card-action,
+	body.slms-portal-page .slms-subject-item-visibility-toggle {
+		width: 100% !important;
+		min-height: 2.35rem !important;
+	}
+}
+
+/* Version 3.3.16 phone refinements for dashboard assignment cards. */
+@media screen and (max-width: 760px) {
+	body.slms-portal-page .slms-dashboard-upcoming-panel .slms-dashboard-upcoming-list {
+		gap: 0.75rem !important;
+	}
+
+	body.slms-portal-page .slms-dashboard-upcoming-panel .slms-dashboard-upcoming-item,
+	body.slms-portal-page .slms-dashboard-upcoming-panel .slms-dashboard-upcoming-item:first-child {
+		display: grid !important;
+		grid-template-columns: 1fr !important;
+		align-items: stretch !important;
+		gap: 0.75rem !important;
+		padding: 1rem !important;
+		border: 1px solid rgba(182, 198, 220, 0.56) !important;
+		border-radius: 18px !important;
+		background: rgba(255, 255, 255, 0.96) !important;
+		box-shadow: 0 10px 24px rgba(31, 47, 65, 0.07) !important;
+	}
+
+	body.slms-portal-page .slms-dashboard-upcoming-panel .slms-dashboard-upcoming-meta {
+		justify-content: flex-start !important;
+		text-align: left !important;
+		width: 100% !important;
+	}
+
+	body.slms-portal-page .slms-dashboard-upcoming-panel .slms-dashboard-upcoming-meta span {
+		white-space: normal !important;
+	}
+}
+
+@media screen and (max-width: 380px) {
+	body.slms-portal-page .slms-dashboard-upcoming-panel .slms-dashboard-upcoming-item,
+	body.slms-portal-page .slms-dashboard-upcoming-panel .slms-dashboard-upcoming-item:first-child {
+		padding: 0.9rem !important;
+		border-radius: 16px !important;
+	}
+}
+
+/* Version 3.3.18 mobile refinements for assignment cards. */
+body.slms-portal-page .slms-dashboard-upcoming-panel .slms-dashboard-upcoming-meta .slms-dashboard-upcoming-deadline {
+	min-height: 0 !important;
+	padding: 0 !important;
+	border-radius: 0 !important;
+	background: transparent !important;
+	box-shadow: none !important;
+	color: rgba(33, 59, 96, 0.76) !important;
+	font-weight: 700 !important;
+	white-space: normal !important;
+}
+
+body.slms-portal-page .slms-submission-review-card > .slms-submission-review-summary,
+body.slms-portal-page .slms-submission-review-card > .slms-submission-review-summary:first-child,
+body.slms-portal-page .slms-submission-inline-accordion > .slms-submission-inline-summary,
+body.slms-portal-page .slms-submission-inline-accordion > .slms-submission-inline-summary:first-child {
+	padding: 1.05rem !important;
+	border-top: 0 !important;
+}
+
+body.slms-portal-page .slms-submission-review-summary .slms-subject-item-card-action,
+body.slms-portal-page .slms-submission-inline-summary .slms-subject-item-card-action {
+	align-self: stretch !important;
+	margin-top: 0 !important;
+}
+
+
+/* v3.3.28: keep attendance modal card fixed and scroll only the inner body on mobile. */
+body.slms-portal-page .slms-attendance-modal-card {
+	overflow: hidden !important;
+	display: flex !important;
+	flex-direction: column !important;
+}
+
+body.slms-portal-page .slms-attendance-modal-body {
+	min-height: 0 !important;
+	overflow-y: auto !important;
+	overflow-x: hidden !important;
+	-webkit-overflow-scrolling: touch;
+}
+
+body.slms-portal-page .slms-attendance-modal-card .slms-attendance-form {
+	overflow: visible !important;
+	max-height: none !important;
+}
+
+
+/* v3.3.32: mobile-first subject and assignment submission workspace. */
+@media screen and (max-width: 760px) {
+	body.slms-portal-page .ugp-section:has(.slms-portal-app),
+	body.slms-portal-page .ugp-section-inner:has(.slms-portal-app),
+	body.slms-portal-page .ugp-section .slms-portal-page-free,
+	body.slms-portal-page .ugp-section-inner .slms-portal-page-free {
+		box-sizing: border-box !important;
+		width: 100% !important;
+		max-width: none !important;
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+		padding-left: max(0.35rem, env(safe-area-inset-left)) !important;
+		padding-right: max(0.35rem, env(safe-area-inset-right)) !important;
+	}
+
+	body.slms-portal-page .slms-portal-page-free,
+	body.slms-portal-page .slms-portal-app,
+	body.slms-portal-page .slms-page-flow-shell,
+	body.slms-portal-page .slms-page-flow-main {
+		width: 100% !important;
+		max-width: none !important;
+		min-width: 0 !important;
+	}
+
+	body.slms-portal-page .slms-portal-page-free {
+		padding-left: max(0.35rem, env(safe-area-inset-left)) !important;
+		padding-right: max(0.35rem, env(safe-area-inset-right)) !important;
+	}
+
+	body.slms-portal-page .slms-page-flow-shell {
+		border-radius: 18px !important;
+	}
+
+	body.slms-portal-page .slms-portal-app.is-subject-view .slms-page-flow-shell--subject,
+	body.slms-portal-page .slms-portal-app.is-subject-view .slms-page-flow-main--subject {
+		border-left: 0 !important;
+		border-right: 0 !important;
+		border-radius: 0 !important;
+		box-shadow: none !important;
+	}
+
+	body.slms-portal-page .slms-portal-app.is-subject-view .slms-page-flow-main--subject {
+		padding-left: max(0.3rem, env(safe-area-inset-left)) !important;
+		padding-right: max(0.3rem, env(safe-area-inset-right)) !important;
+		padding-bottom: 1rem !important;
+	}
+
+	body.slms-portal-page .slms-portal-app.is-subject-view .slms-page-flow-main--subject > .slms-portal-panel,
+	body.slms-portal-page .slms-portal-app.is-subject-view .slms-subject-tab-layout,
+	body.slms-portal-page .slms-portal-app.is-subject-view .slms-subject-item-window-shell,
+	body.slms-portal-page .slms-portal-app.is-subject-view .slms-subject-item-window-frame {
+		width: 100% !important;
+		max-width: none !important;
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+		border: 0 !important;
+		border-radius: 0 !important;
+		background: transparent !important;
+		box-shadow: none !important;
+	}
+
+	body.slms-portal-page .slms-portal-app.is-subject-view .slms-subject-item-window-shell {
+		gap: 0.8rem !important;
+		padding-top: 0.55rem !important;
+		padding-bottom: 0.4rem !important;
+	}
+
+	body.slms-portal-page .slms-portal-app.is-subject-view .slms-subject-item-window-toolbar {
+		padding-left: 0.25rem !important;
+		padding-right: 0.25rem !important;
+	}
+
+	body.slms-portal-page .slms-portal-app.is-subject-view .slms-subject-detail-shell {
+		display: grid !important;
+		grid-template-columns: 1fr !important;
+		gap: 0.85rem !important;
+	}
+
+	body.slms-portal-page .slms-portal-app.is-subject-view .slms-subject-detail-main {
+		padding: 0.85rem 0.55rem 1rem !important;
+		border: 0 !important;
+		border-radius: 0 !important;
+		background: transparent !important;
+		box-shadow: none !important;
+		gap: 1rem !important;
+	}
+
+	body.slms-portal-page .slms-portal-app.is-subject-view .slms-subject-detail-sidebar {
+		padding: 0 0.55rem 0.8rem !important;
+	}
+
+	body.slms-portal-page .slms-portal-app.is-subject-view .slms-subject-side-card {
+		border-radius: 16px !important;
+		box-shadow: none !important;
+	}
+
+	body.slms-portal-page .slms-portal-app.is-subject-view .slms-subject-detail-head {
+		padding-bottom: 0.75rem !important;
+	}
+
+	body.slms-portal-page .slms-portal-app.is-subject-view .slms-subject-detail-head h2 {
+		font-size: clamp(1.45rem, 7vw, 2rem) !important;
+		line-height: 1.15 !important;
+	}
+
+	body.slms-portal-page .slms-subject-submission-section {
+		margin-top: 0.8rem !important;
+		padding-top: 0.8rem !important;
+	}
+
+	body.slms-portal-page .slms-subject-submission-section .slms-submission-editor[open] {
+		border: 0 !important;
+		border-radius: 0 !important;
+		background: transparent !important;
+		box-shadow: none !important;
+		overflow: visible !important;
+	}
+
+	body.slms-portal-page .slms-subject-submission-section .slms-submission-editor[open] > .slms-assignment-open-submit-button {
+		border: 1px solid rgba(92, 169, 230, 0.26) !important;
+		border-radius: 18px !important;
+		box-shadow: 0 10px 22px rgba(37, 111, 178, 0.1) !important;
+	}
+
+	body.slms-portal-page .slms-subject-submission-section .slms-submission-editor-body,
+	body.slms-portal-page .slms-subject-submission-section .slms-assignment-submission-form,
+	body.slms-portal-page .slms-subject-submission-section .slms-assignment-submission-form label {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+		border: 0 !important;
+		border-radius: 0 !important;
+		background: transparent !important;
+		box-shadow: none !important;
+	}
+
+	body.slms-portal-page .slms-subject-submission-section .slms-submission-editor-body {
+		padding-top: 0.75rem !important;
+		padding-bottom: 0.2rem !important;
+		gap: 0.75rem !important;
+	}
+
+	body.slms-portal-page .slms-subject-submission-section .slms-submission-editor-intro {
+		padding: 0.65rem 0.2rem !important;
+		border: 0 !important;
+		border-radius: 0 !important;
+		background: transparent !important;
+	}
+
+	body.slms-portal-page .slms-subject-submission-section .slms-assignment-submission-form {
+		gap: 0.85rem !important;
+	}
+
+	body.slms-portal-page .slms-subject-submission-section .slms-assignment-submission-form label > span {
+		padding-left: 0.1rem !important;
+	}
+
+	body.slms-portal-page .slms-subject-submission-section textarea[name="submission_text"] {
+		display: block !important;
+		width: 100% !important;
+		max-width: none !important;
+		min-height: 54svh !important;
+		padding: 0.85rem 0.75rem !important;
+		border-radius: 14px !important;
+		font-size: 16px !important;
+		line-height: 1.65 !important;
+		resize: vertical !important;
+	}
+
+	body.slms-portal-page .slms-subject-submission-section input[type="file"] {
+		width: 100% !important;
+		padding: 0.75rem !important;
+		border-radius: 14px !important;
+	}
+
+	body.slms-portal-page .slms-subject-submission-section .slms-assignment-submit-button {
+		width: 100% !important;
+		min-height: 3.15rem !important;
+		justify-content: center !important;
+	}
+}
+
+@media screen and (max-width: 420px) {
+	body.slms-portal-page .slms-portal-page-free {
+		padding-left: max(0.2rem, env(safe-area-inset-left)) !important;
+		padding-right: max(0.2rem, env(safe-area-inset-right)) !important;
+	}
+
+	body.slms-portal-page .slms-portal-app.is-subject-view .slms-page-flow-main--subject {
+		padding-left: max(0.15rem, env(safe-area-inset-left)) !important;
+		padding-right: max(0.15rem, env(safe-area-inset-right)) !important;
+	}
+
+	body.slms-portal-page .slms-portal-app.is-subject-view .slms-subject-detail-main,
+	body.slms-portal-page .slms-portal-app.is-subject-view .slms-subject-detail-sidebar {
+		padding-left: 0.35rem !important;
+		padding-right: 0.35rem !important;
+	}
+}
+
+/* v3.3.33: focused mobile full-bleed LMS workspace.
+ * Let the LMS fill the available ugp-section width on phones while keeping
+ * readable padding inside actual cards, panels, buttons, and form fields.
+ */
+@media screen and (max-width: 760px) {
+	body.slms-portal-page .post-main-content,
+	body.slms-portal-page .entry-content,
+	body.slms-portal-page .post-content-wrap,
+	body.slms-portal-page .ugp-section:has(.slms-portal-page-free),
+	body.slms-portal-page .ugp-portal-section:has(.slms-portal-page-free),
+	body.slms-portal-page .ugp-section-inner:has(.slms-portal-page-free),
+	body.slms-portal-page .ugp-portal-section-inner:has(.slms-portal-page-free),
+	body.slms-portal-page .ugp-card:has(.slms-portal-page-free),
+	body.slms-portal-page .ugb-card:has(.slms-portal-page-free),
+	body.slms-portal-page .ugp-card-text:has(.slms-portal-page-free),
+	body.slms-portal-page .ugb-card__content:has(.slms-portal-page-free),
+	body.slms-portal-page .ugp-section:has(.slms-portal-app),
+	body.slms-portal-page .ugp-portal-section:has(.slms-portal-app),
+	body.slms-portal-page .ugp-section-inner:has(.slms-portal-app),
+	body.slms-portal-page .ugp-portal-section-inner:has(.slms-portal-app) {
+		box-sizing: border-box !important;
+		width: 100% !important;
+		max-width: none !important;
+		min-width: 0 !important;
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+
+	body.slms-portal-page .slms-portal-page-free,
+	body.slms-portal-page .slms-portal-gateway,
+	body.slms-portal-page .slms-portal-app,
+	body.slms-portal-page .slms-page-flow-shell,
+	body.slms-portal-page .slms-page-flow-main,
+	body.slms-portal-page .slms-page-flow-main--subject,
+	body.slms-portal-page .slms-editor-tools {
+		box-sizing: border-box !important;
+		width: 100% !important;
+		max-width: none !important;
+		min-width: 0 !important;
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+
+	body.slms-portal-page .slms-portal-page-free,
+	body.slms-portal-page .slms-portal-gateway {
+		padding-top: 0 !important;
+		padding-bottom: 1.25rem !important;
+	}
+
+	body.slms-portal-page .slms-page-flow-main {
+		padding-top: 0.75rem !important;
+		padding-bottom: 1.25rem !important;
+	}
+
+	body.slms-portal-page .slms-page-flow-shell {
+		border-left: 0 !important;
+		border-right: 0 !important;
+		border-radius: 0 !important;
+		box-shadow: none !important;
+	}
+
+	body.slms-portal-page .slms-page-flow-shell > .slms-portal-banner,
+	body.slms-portal-page .slms-page-flow-shell > .slms-subject-hero {
+		border-left: 0 !important;
+		border-right: 0 !important;
+		border-radius: 0 !important;
+	}
+
+	body.slms-portal-page .slms-page-flow-main > .slms-portal-panel,
+	body.slms-portal-page .slms-page-flow-main > .slms-flow-section,
+	body.slms-portal-page .slms-page-flow-main > .slms-content-card,
+	body.slms-portal-page .slms-page-flow-main > .slms-workspace-panel,
+	body.slms-portal-page .slms-page-flow-main > .slms-empty-state {
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
+}
+
+/* Version 3.3.54 mobile assignment submission no-shadow and late-policy spacing. */
+@media screen and (max-width: 640px) {
+	body.slms-portal-page .slms-assignment-late-policy-card {
+		padding: 0.95rem 1rem !important;
+		border-radius: 16px !important;
+	}
+
+	body.slms-portal-page .slms-subject-submission-section .slms-submission-editor[open] > .slms-assignment-open-submit-button,
+	body.slms-portal-page .slms-assignment-open-submit-button,
+	body.slms-portal-page .slms-assignment-open-submit-button:hover,
+	body.slms-portal-page .slms-assignment-open-submit-button:focus-visible,
+	body.slms-portal-page .slms-assignment-submit-button,
+	body.slms-portal-page .slms-assignment-submit-button:hover,
+	body.slms-portal-page .slms-assignment-submit-button:focus-visible {
+		box-shadow: none !important;
+		transform: none !important;
+	}
+}
+
+/* Version 3.3.55 mobile external policy card and no-border submit trigger. */
+@media screen and (max-width: 640px) {
+	body.slms-portal-page .slms-assignment-open-submit-button,
+	body.slms-portal-page .slms-assignment-open-submit-button:hover,
+	body.slms-portal-page .slms-assignment-open-submit-button:focus-visible,
+	body.slms-portal-page .slms-subject-submission-section .slms-submission-editor[open] > .slms-assignment-open-submit-button {
+		border: 0 !important;
+		border-bottom: 0 !important;
+		box-shadow: none !important;
+		transform: none !important;
+	}
+
+	body.slms-portal-page .slms-subject-submission-section > .slms-assignment-late-policy-card,
+	body.slms-portal-page .slms-subject-side-card > .slms-assignment-late-policy-card {
+		margin-top: 0.75rem !important;
+		padding: 1rem 1.05rem !important;
+	}
+}
+
+/* Version 3.3.56: keep assignment submit opener flat on mobile too. */
+@media (max-width: 768px) {
+	body.slms-portal-page .slms-subject-submission-section .slms-submission-editor[open] > .slms-assignment-open-submit-button,
+	body.slms-portal-page .slms-subject-submission-section .slms-assignment-open-submit-button,
+	body.slms-portal-page .slms-subject-submission-section .slms-assignment-open-submit-button:hover,
+	body.slms-portal-page .slms-subject-submission-section .slms-assignment-open-submit-button:focus-visible {
+		background: #eaf4ff !important;
+		background-image: none !important;
+		border: 0 !important;
+		box-shadow: none !important;
+		transform: none !important;
+		transition: none !important;
+	}
+}
+

@@ -1,0 +1,351 @@
+:root {
+	--slms-login-primary: #256fb2;
+	--slms-login-primary-deep: #00386f;
+	--slms-login-accent: #5ca9e6;
+	--slms-login-border: #d4e4f5;
+	--slms-login-surface: rgba(255, 255, 255, 0.96);
+	--slms-login-surface-soft: rgba(240, 247, 255, 0.82);
+	--slms-login-text: #1f2f41;
+	--slms-login-muted: #526477;
+	--slms-login-success: #0f766e;
+	--slms-login-error: #b42318;
+	--slms-login-shadow: 0 32px 64px rgba(0, 56, 111, 0.12);
+	--slms-login-shadow-soft: 0 18px 34px rgba(37, 111, 178, 0.12);
+	--slms-login-field-gap: 0.42rem;
+}
+
+body.login {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	margin: 0;
+	padding: 2rem 1rem;
+	background:
+		radial-gradient(circle at 14% 16%, rgba(92, 169, 230, 0.18), transparent 22rem),
+		radial-gradient(circle at 88% 84%, rgba(0, 56, 111, 0.12), transparent 24rem),
+		linear-gradient(180deg, #eef5fd 0%, #f9fbff 52%, #edf4fb 100%);
+	color: var(--slms-login-text);
+	font-family: "Lato", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body.login::before {
+	content: none;
+}
+
+body.login div#login {
+	position: relative;
+	z-index: 1;
+	width: min(100%, 384px);
+	padding: 0;
+	margin: 0;
+}
+
+body.login #login h1 {
+	margin: 0 0 calc(3.15rem - 5px);
+	padding: 0;
+}
+
+body.login #login h1 a {
+	display: block;
+	width: 172px;
+	height: 172px;
+	margin: 0 auto;
+	background-image: var(--slms-login-logo);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: contain;
+	border: 0;
+	outline: none;
+}
+
+body.login form {
+	margin-top: 0;
+}
+
+body.login #loginform {
+	margin: 0;
+	display: grid;
+	grid-template-columns: 1fr;
+	padding: 1.42rem 1.42rem 1.34rem;
+	border: 1px solid var(--slms-login-border);
+	border-radius: 28px;
+	background:
+		linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(245, 250, 255, 0.96));
+	box-shadow: var(--slms-login-shadow);
+}
+
+body.login #loginform > p,
+body.login #loginform .user-pass-wrap {
+	margin: 0;
+}
+
+body.login #loginform > p:not(.forgetmenot):not(.submit) {
+	padding: 0 0 1.08rem;
+}
+
+body.login label {
+	font-size: 0.92rem;
+	font-weight: 700;
+	color: var(--slms-login-text);
+}
+
+body.login #loginform > p > label,
+body.login #loginform .user-pass-wrap > label {
+	display: block;
+	margin-bottom: var(--slms-login-field-gap);
+}
+
+body.login form .input,
+body.login input[type="text"],
+body.login input[type="password"],
+body.login input[type="email"] {
+	width: 100%;
+	min-height: 48px;
+	margin-top: 0;
+	padding: 0.68rem 0.9rem;
+	border: 1.5px solid var(--slms-login-border);
+	border-radius: 16px;
+	background: #fbfdff;
+	box-shadow: none;
+	color: var(--slms-login-text);
+	font-size: 0.98rem;
+	line-height: 1.35;
+	transition: border-color 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+}
+
+body.login form .input:focus,
+body.login input[type="text"]:focus,
+body.login input[type="password"]:focus,
+body.login input[type="email"]:focus {
+	border-color: var(--slms-login-primary);
+	background: #ffffff;
+	box-shadow: 0 0 0 4px rgba(37, 111, 178, 0.12);
+	outline: none;
+}
+
+body.login .wp-pwd {
+	margin-top: 0;
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+	grid-template-rows: 48px auto;
+	align-items: stretch;
+}
+
+body.login .wp-pwd .password-input {
+	grid-column: 1;
+	grid-row: 1;
+	height: 48px;
+	box-sizing: border-box;
+	padding-right: 3.4rem;
+}
+
+body.login .wp-pwd .button.wp-hide-pw {
+	display: block;
+	grid-column: 1;
+	grid-row: 1;
+	place-self: center end;
+	min-width: 24px !important;
+	max-width: 24px !important;
+	min-height: 24px !important;
+	max-height: 24px !important;
+	height: 24px !important;
+	width: 24px !important;
+	flex: 0 0 24px;
+	margin: 0;
+	margin-right: 0.55rem;
+	padding: 0 !important;
+	position: relative;
+	top: auto;
+	right: auto;
+	bottom: auto;
+	border: 0;
+	background: transparent;
+	box-shadow: none;
+	color: var(--slms-login-primary);
+	line-height: 1;
+	font-size: 0;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+body.login .wp-pwd .button.wp-hide-pw:hover,
+body.login .wp-pwd .button.wp-hide-pw:focus {
+	position: relative;
+	background: transparent;
+	box-shadow: none;
+}
+
+body.login .wp-pwd .button.wp-hide-pw .dashicons {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	font-size: 20px;
+	line-height: 1;
+	vertical-align: middle;
+}
+
+body.login .wp-pwd .button.wp-hide-pw .dashicons::before {
+	display: block;
+	margin: 0;
+	line-height: 24px;
+	text-align: center;
+}
+
+body.login .wp-pwd .caps-warning,
+body.login .wp-pwd #caps-warning {
+	grid-column: 1 / -1;
+	grid-row: 2;
+	margin-top: 0.35rem;
+}
+
+body.login .forgetmenot,
+body.login .submit {
+	float: none;
+}
+
+body.login .forgetmenot {
+	display: flex;
+	align-items: center;
+	margin: 0;
+	padding: 0.4rem 0 var(--slms-login-field-gap);
+}
+
+body.login .submit {
+	margin: 0;
+	padding: 0;
+}
+
+body.login .button-primary,
+body.login input[type="submit"] {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	min-height: 52px;
+	padding: 0.85rem 1rem;
+	border: 0;
+	border-radius: 16px;
+	background: linear-gradient(180deg, var(--slms-login-primary) 0%, var(--slms-login-primary-deep) 100%);
+	box-shadow: var(--slms-login-shadow-soft);
+	color: #ffffff;
+	font-size: 0.98rem;
+	font-weight: 700;
+	line-height: 1;
+	text-shadow: none;
+	transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+}
+
+body.login .button-primary:hover,
+body.login .button-primary:focus,
+body.login input[type="submit"]:hover,
+body.login input[type="submit"]:focus {
+	transform: translateY(-1px);
+	box-shadow: 0 22px 36px rgba(0, 56, 111, 0.18);
+	filter: saturate(1.03);
+}
+
+body.login .dashicons-visibility,
+body.login .dashicons-hidden {
+	color: var(--slms-login-primary);
+}
+
+body.login .forgetmenot label {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.55rem;
+	font-weight: 600;
+	color: var(--slms-login-muted);
+}
+
+body.login input[type="checkbox"] {
+	border-color: var(--slms-login-border);
+}
+
+body.login input[type="checkbox"]:checked::before {
+	color: var(--slms-login-primary);
+}
+
+body.login #nav,
+body.login #backtoblog {
+	margin: 1rem 0 0;
+	padding: 0;
+	text-align: center;
+}
+
+body.login #nav a,
+body.login #backtoblog a,
+body.login .privacy-policy-page-link a {
+	color: var(--slms-login-primary);
+	font-size: 0.92rem;
+	text-decoration: none;
+}
+
+body.login #nav a:hover,
+body.login #nav a:focus,
+body.login #backtoblog a:hover,
+body.login #backtoblog a:focus,
+body.login .privacy-policy-page-link a:hover,
+body.login .privacy-policy-page-link a:focus {
+	color: var(--slms-login-primary-deep);
+	text-decoration: underline;
+}
+
+body.login #login_error,
+body.login .message,
+body.login .success {
+	margin: 0 0 1rem;
+	padding: 0.95rem 1rem;
+	border-radius: 18px;
+	border-left: 0;
+	box-shadow: none;
+}
+
+body.login #login_error {
+	border: 1px solid rgba(180, 35, 24, 0.22);
+	background: rgba(180, 35, 24, 0.08);
+	color: var(--slms-login-error);
+}
+
+body.login .message,
+body.login .success {
+	border: 1px solid rgba(15, 118, 110, 0.2);
+	background: rgba(15, 118, 110, 0.08);
+	color: var(--slms-login-success);
+}
+
+body.login .language-switcher,
+body.login .privacy-policy-page-link {
+	text-align: center;
+}
+
+@media (max-width: 600px) {
+	body.login {
+		padding: 1.5rem 0.85rem;
+	}
+
+	body.login::before {
+		content: none;
+	}
+
+	body.login div#login {
+		width: 100%;
+	}
+
+	body.login #login h1 a {
+		width: 143px;
+		height: 143px;
+		margin-bottom: 0;
+	}
+
+	body.login #loginform {
+		padding: 1.22rem;
+		border-radius: 24px;
+	}
+}
